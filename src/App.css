@@ -1,0 +1,28 @@
+
+.container{
+  display: flex;
+}
+.container p{
+  margin: 0;
+}
+
+.right-item{
+  margin-left: auto; 
+}
+
+.left-item{
+  /* align-items: left; */
+  margin-right: auto; 
+}
+
+div{
+  margin: 0;
+}
+
+div{
+  padding: 0;
+}
+
+div {
+  border: none;
+}
