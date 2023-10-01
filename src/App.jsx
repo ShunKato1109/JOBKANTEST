@@ -21,7 +21,8 @@ export const App = () =>{
       paddingRight:'25px',
       cursor:'pointer',
       border:'none',
-      
+      borderRight:'1px solid gray',
+      borderLeft:'1px solid gray',
     };
     return <button style={headButtonStyle}>{props.label}</button>
   }
@@ -45,7 +46,7 @@ export const App = () =>{
     {/* ヘッダー１　ドロップダウンあり */}
     <StyledHead1>
       <div style={{display:'flex',alignItems:'center'}}>
-        <p style={{padding:'10px'}}>ジョブカン</p>
+        <p style={{padding:'10px',fontSize:'50%',fontWeight:'bold'}}>ジョブカン</p>
         <HeadButton label="勤怠"></HeadButton>
         <HeadButton label="労務"></HeadButton>
         <HeadButton label="給与"></HeadButton>
