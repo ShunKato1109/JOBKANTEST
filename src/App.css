@@ -1,28 +1,14 @@
-
-.container{
-  display: flex;
-}
-.container p{
+div {
   margin: 0;
 }
+
 
 .right-item{
   margin-left: auto; 
+  line-height: 1;
+  text-decoration: underline;
 }
 
 .left-item{
-  /* align-items: left; */
   margin-right: auto; 
-}
-
-div{
-  margin: 0;
-}
-
-div{
-  padding: 0;
-}
-
-div {
-  border: none;
 }
