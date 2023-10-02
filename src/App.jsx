@@ -7,58 +7,95 @@ export const App = () =>{
   const StyledHead1 = styled.header`
   background-color:#222222;
   display:flex;
-  align-items:center;
+  align-items:strech;
   color:white;
   height:25px;
   `;
 
-  const HeadButton =(props)=>{
+  const HeadButton1 =(props)=>{
     const headButtonStyle={
-      color:'white',
+      color:'#c0c0c0',
       backgroundColor:'transparent',
-      fontSize:'50%',
+      fontSize:'70%',
+      fontWeight:'bold',
       paddingLeft:'25px',
       paddingRight:'25px',
       cursor:'pointer',
       border:'none',
-      borderRight:'1px solid gray',
-      borderLeft:'1px solid gray',
+      borderRight:'0.5px solid gray',
     };
+    return <button style={headButtonStyle}>{props.label}</button>
+  }
+
+  const HeadButton2 =(props)=>{
+    const headButtonStyle={
+      color:'#c0c0c0',
+      backgroundColor:'transparent',
+      fontSize:'60%',
+      paddingLeft:'25px',
+      paddingRight:'25px',
+      cursor:'pointer',
+      border:'none',
+      borderRight:'0.5px solid gray',
+    };
+
+
     return <button style={headButtonStyle}>{props.label}</button>
   }
 
   const StyledHead2 = styled.header`
   background-color:#30B2D6;
   color:white;
+  height:80px;
   display: flex;
   align-items:center;
-  height:80px;
+  // align-items: baseline;
   `;
 
-  const ContainerDiv = styled.div`
-  display: flex;
-  align-items: baseline;
+  const SidebarDiv = styled.div`
+  width:240px;
+  height:100vh;
+  background-color:#e0e0e0;
   `;
+
+  const SideButton1 = (props)=>{
+    const sideBarStyle={
+      color:'black',
+      backgroundColor:'transparent',
+      border:'none',
+    };
+    
+    return <button style={sideBarStyle}>{props.label}</button>
+  };
+
+  const SideBarBox=(props)=>{
+    return(
+      <div style={{display:'flex',height:'50px',alignItems:'center'}}>
+        <p style={{marginLeft:'15px'}}>印</p>
+        <SideButton1 >{props.label}</SideButton1>
+      </div>
+    )
+  };
 
 
   return (
     <>
     {/* ヘッダー１　ドロップダウンあり */}
     <StyledHead1>
-      <div style={{display:'flex',alignItems:'center'}}>
-        <p style={{padding:'10px',fontSize:'50%',fontWeight:'bold'}}>ジョブカン</p>
-        <HeadButton label="勤怠"></HeadButton>
-        <HeadButton label="労務"></HeadButton>
-        <HeadButton label="給与"></HeadButton>
+      <div style={{display:'flex'}}>
+        <HeadButton1 label="ジョブカン"></HeadButton1>
+        <HeadButton2 label="勤怠"></HeadButton2>
+        <HeadButton2 label="労務"></HeadButton2>
+        <HeadButton2 label="給与"></HeadButton2>
       </div>
     </StyledHead1>
 
     {/* ヘッダー２　ジョブカン */}
     <StyledHead2>
-        <ContainerDiv>
-        <p style={{fontSize:'200%',fontWeight:'bold'}}>ジョブカン</p>
-        <p style={{fontSize:'50%'}}>勤怠管理</p>
-        </ContainerDiv>
+        <div style={{display:'flex',alignItems:'baseline',marginLeft:'20px'}}>
+        <p style={{fontSize:'210%',fontWeight:'bold'}}>ジョブカン</p>
+        <p style={{fontSize:'80%'}}>勤怠管理</p>
+        </div>
         <div style={{marginLeft:'auto',marginRight:'20px',textDecoration:'underline',lineHeight:'1'}}>
         <p style={{fontSize:'25%',}}>加藤舜涼さん</p>
         <p style={{fontSize:'25%'}}>スタッフコード(rv230009)</p>
@@ -66,7 +103,10 @@ export const App = () =>{
     </StyledHead2>
 
     {/* サイドバー */}
-    <aside></aside>
+    {/* <aside></aside> */}
+    <SidebarDiv>
+      <SideBarBox label="出勤簿"/>
+    </SidebarDiv>
 
     {/* メインコンテンツ */}
     <main></main>

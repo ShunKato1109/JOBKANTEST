@@ -3,12 +3,6 @@ div {
 }
 
 
-.right-item{
-  margin-left: auto; 
-  line-height: 1;
-  text-decoration: underline;
-}
-
 .left-item{
   margin-right: auto; 
 }
