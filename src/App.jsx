@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { HeadButton1,HeadButton2 } from "./Conpornents/Header1";
+import { HeadButton1,HeadButton2,HeadButton3 } from "./Conpornents/Header1";
 import { Sheader1 ,SfirstRowItem,SsecondRowItem,SthirdRowItem } from "./Conpornents/Header1";
 import { Sheader2 } from "./Conpornents/Header2";
 import { SidebarAside } from "./Conpornents/SideBar";
@@ -64,12 +64,8 @@ export const App = () =>{
         <HeadButton2 label="勤怠" />
         <HeadButton2 label="労務" />
         <HeadButton2 label="給与" />
-        {/* <HeadButton1 style={{marginLeft:'auto',color:'red'}} label="まだ作成できてない" /> */}
-        <HeadButton1 style={{marginLeft:'auto'}}>まだ</HeadButton1>
+        <HeadButton3 label="アカウント名" />
         </SsecondRowItem>
-        {/* <SthirdRowItem>
-        <HeadButton1 label="まだ作成できてない" />
-        </SthirdRowItem> */}
     </Sheader1>
 
     {/* ヘッダー２　ジョブカン */}
