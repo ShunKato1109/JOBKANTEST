@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { HeadButton1,HeadButton2 } from "./Conpornents/Header1";
-import { Sheader1 } from "./Conpornents/Header1";
+import { Sheader1 ,SfirstRowItem,SsecondRowItem,SthirdRowItem } from "./Conpornents/Header1";
 import { Sheader2 } from "./Conpornents/Header2";
 import { SidebarAside } from "./Conpornents/SideBar";
 import { SideBarButton } from "./Conpornents/SideBar";
@@ -57,12 +57,19 @@ export const App = () =>{
     <>
     {/* ヘッダー１　ドロップダウンあり */}
     <Sheader1>
-      <div style={{display:'flex'}}>
+      <SfirstRowItem>
         <HeadButton1 label="ジョブカン" />
-        <HeadButton2 label="勤怠"></HeadButton2>
-        <HeadButton2 label="労務"></HeadButton2>
-        <HeadButton2 label="給与"></HeadButton2>
-      </div>
+      </SfirstRowItem>
+      <SsecondRowItem>
+        <HeadButton2 label="勤怠" />
+        <HeadButton2 label="労務" />
+        <HeadButton2 label="給与" />
+        {/* <HeadButton1 style={{marginLeft:'auto',color:'red'}} label="まだ作成できてない" /> */}
+        <HeadButton1 style={{marginLeft:'auto'}}>まだ</HeadButton1>
+        </SsecondRowItem>
+        {/* <SthirdRowItem>
+        <HeadButton1 label="まだ作成できてない" />
+        </SthirdRowItem> */}
     </Sheader1>
 
     {/* ヘッダー２　ジョブカン */}
