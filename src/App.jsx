@@ -1,10 +1,9 @@
 import React, { Component } from "react";
+import { ResponsiveHeader } from "./Compornents/ResponsiveHeader1";
 import styled from "styled-components";
-import { HeadButton1,HeadButton2,HeadButton3 } from "./Conpornents/Header1";
-import { Sheader1 ,SfirstRowItem,SsecondRowItem,SthirdRowItem } from "./Conpornents/Header1";
-import { Sheader2 } from "./Conpornents/Header2";
-import { SidebarAside } from "./Conpornents/SideBar";
-import { SideBarButton } from "./Conpornents/SideBar";
+import { Sheader2 } from "./Compornents/Header2";
+import { SidebarAside } from "./Compornents/SideBar";
+import { SideBarButton } from "./Compornents/SideBar";
 
 //CancelButton Css
 export const ScancelButton={
@@ -55,18 +54,8 @@ export const MainDiv2 = styled.div`
 export const App = () =>{
   return (
     <>
-    {/* ヘッダー１　ドロップダウンあり */}
-    <Sheader1>
-      <SfirstRowItem>
-        <HeadButton1 label="ジョブカン" />
-      </SfirstRowItem>
-      <SsecondRowItem>
-        <HeadButton2 label="勤怠" />
-        <HeadButton2 label="労務" />
-        <HeadButton2 label="給与" />
-        <HeadButton3 label="アカウント名" />
-        </SsecondRowItem>
-    </Sheader1>
+    {/* ヘッダー1(画面サイズに応じてレイアウト変更のコンポーネント) */}
+    <ResponsiveHeader />
 
     {/* ヘッダー２　ジョブカン */}
     <Sheader2>
