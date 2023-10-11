@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-//header1
+//Header1 Style
 export const Sheader1 = styled.header`
-background-color:#222222;
-border:0.5px solid gray;
-display:flex;
-color:white;
-height:50px;
-flex-direction:column;
+    background-color:#222222;
+    border:0.5px solid gray;
+    display:flex;
+    color:white;
+    height:50px;
+    flex-direction:column;
 `;
 
-//FirstRowDiv Css
+//FirstRowDiv Style
 export const SfirstRowItem = styled.div`
     display:flex;
     height:50%;
@@ -23,7 +23,7 @@ export const SfirstRowItem = styled.div`
     }
 `;
 
-//SecondRowDiv Css
+//SecondRowDiv Style
 export const SsecondRowItem = styled.div`
     display:flex;
     height:50%;
@@ -33,7 +33,7 @@ export const SsecondRowItem = styled.div`
     }
 `;
 
-//ThirdRowDiv Css
+//ThirdRowDiv Style
 export const SthirdRowItem = styled.div`
     display:flex;
     height:100%;
@@ -45,7 +45,7 @@ export const SthirdRowItem = styled.div`
 `;
 
 
-//Header1 button css
+//Header1Button CSS
 export const SheadButton1={
     fontSize:'1px',
     paddingLeft:'25px',
@@ -55,7 +55,7 @@ export const SheadButton1={
     borderRight:'0.5px solid gray',
 };
 
-//Header button2 css
+//HeaderButton2 CSS
 export const SheadButton2={
     fontSize:'10px',
     paddingLeft:'25px',
@@ -65,7 +65,7 @@ export const SheadButton2={
     borderRight:'0.5px solid gray',
   };
 
-  //Header button3 css
+  //HeaderButton3 CSS
 export const SlogOutButton={
     fontSize:'10px',
     marginLeft:'auto',
@@ -76,13 +76,14 @@ export const SlogOutButton={
     borderLeft:'0.5px solid gray',
   };
 
+  //HeadButton Style
   export const SHeadButton = styled.button`
-  color:#c0c0c0;
-  background-color:transparent;
-  &:hover{
-    color:white;
-    background-color:black;
-  }
+    color:#c0c0c0;
+    background-color:transparent;
+    &:hover{
+        color:white;
+        background-color:black;
+    }
   `; 
 
   //header1 button Compornent

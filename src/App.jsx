@@ -2,25 +2,10 @@ import React, { Component } from "react";
 import { ResponsiveHeader } from "./Compornents/ResponsiveHeader1";
 import styled from "styled-components";
 import { Sheader2 } from "./Compornents/Header2";
-import { SidebarAside } from "./Compornents/SideBar";
+import { SideBar, SsidebarAside } from "./Compornents/SideBar";
 import { SideBarButton } from "./Compornents/SideBar";
 
-//CancelButton Css
-export const ScancelButton={
-  color:'black',
-  fontSize:'30px',
-  height:'40px',
-  alignItems:'center',
-  textAlign:"right",
-  backgroundColor:'transparent',
-  border:'none',
-  cursor:'pointer',
-};
 
-//CancelButton関数
-export const CancelButton = ()=>{
-  return <button style={ScancelButton}>×</button>
-};
 
 //main内Div1
 export const MainDiv1 = styled.div`
@@ -73,14 +58,7 @@ export const App = () =>{
     <div style={{display:'flex'}}>
 
     {/* サイドバー */}
-    <SidebarAside>
-      <CancelButton />
-      <SideBarButton label="出勤簿"/>
-      <SideBarButton label="打刻修正"/>
-      <SideBarButton label="工数管理"/>
-      <SideBarButton label="申請"/>
-      <SideBarButton label="スタッフ設定"/>
-    </SidebarAside>
+    <SideBar />
 
     {/* メインコンテンツ */}
     <main style={{backgroundColor:'red',flexGrow:'1'}}>
