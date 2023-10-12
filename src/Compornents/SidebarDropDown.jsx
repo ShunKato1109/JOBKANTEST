@@ -39,10 +39,10 @@ const SdropdownContent = styled.div`
   font-size:12px;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 130px;
+  width: auto;
+  white-space:nowrap;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   left:230px;
-  // right:0px;
   top:0px;
   border-radius:5px;
 
@@ -68,7 +68,7 @@ export const SidebarDropDown = (props)=>{
 
     return (
         <SdropDownDiv>
-            <SdropDownButton onClick={()=>setShow(!show)}>{props.icon}{props.label}</SdropDownButton>
+            <SdropDownButton onClick={()=>setShow(!show)}>{props.icon}　{props.label}</SdropDownButton>
             <SdropdownContent show={show}>
                 <a href="#">{props.list1}</a>
                 <a href="#">{props.list2}</a>

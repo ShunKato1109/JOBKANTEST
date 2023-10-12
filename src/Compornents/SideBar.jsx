@@ -4,6 +4,8 @@ import { SidebarDropDown } from "./SidebarDropDown";
 import {SlCalender} from "react-icons/sl";
 import {TbClockEdit} from "react-icons/tb";
 import {BsGear} from "react-icons/bs";
+import {HiWrenchScrewdriver} from "react-icons/hi2";
+import {PiNotePencilDuotone} from "react-icons/pi";
 
 //SideBar Style
 export const SsidebarAside = styled.aside`
@@ -57,8 +59,8 @@ export const SideBar = ()=>{
       <CancelButton />
       <SideBarButton icon=<SlCalender /> label="出勤簿"/>
       <SideBarButton icon=<TbClockEdit /> label="打刻修正"/>
-      <SidebarDropDown icon="★" label="工数管理" list1="工数管理" list2="工数かんたん入力設定" />
-      <SidebarDropDown icon="★" label="申請" list1="休暇申請" list2="休日出勤申請" />
+      <SidebarDropDown icon=<HiWrenchScrewdriver />  label="工数管理" list1="工数管理" list2="工数かんたん入力設定" />
+      <SidebarDropDown icon=<PiNotePencilDuotone /> label="申請" list1="休暇申請" list2="休日出勤申請" />
       <SideBarButton icon=<BsGear /> label="スタッフ設定"/>
     </SsidebarAside>
   )
