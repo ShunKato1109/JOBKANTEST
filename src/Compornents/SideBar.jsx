@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { SidebarDropDown } from "./SidebarDropDown";
+import {SlCalender} from "react-icons/sl";
+import {TbClockEdit} from "react-icons/tb";
+import {BsGear} from "react-icons/bs";
 
 //SideBar Style
 export const SsidebarAside = styled.aside`
@@ -25,9 +28,9 @@ export const SsideButton = styled.button`
   };
 `;
 
-//関数SideBarButton
+//関数SideBarButton(props icon,label)
 export const SideBarButton =(props)=>{
-  return <SsideButton>★ {props.label}</SsideButton>
+  return <SsideButton>{props.icon}　{props.label}</SsideButton>
 };
 
 // Button Style
@@ -36,6 +39,7 @@ export const ScancelButton = styled.button`
   color:black;
   font-size:30px;
   height:40px;
+  width:240px;
   text-align:right;
   border:none;
   cursor:pointer;
@@ -51,12 +55,11 @@ export const SideBar = ()=>{
   return(
     <SsidebarAside>
       <CancelButton />
-      <SideBarButton label="出勤簿"/>
-      <SideBarButton label="打刻修正"/>
-      <SideBarButton label="工数管理"/>
-      <SideBarButton label="申請"/>
-      <SideBarButton label="スタッフ設定"/>
-      <SidebarDropDown />
+      <SideBarButton icon=<SlCalender /> label="出勤簿"/>
+      <SideBarButton icon=<TbClockEdit /> label="打刻修正"/>
+      <SidebarDropDown icon="★" label="工数管理" list1="工数管理" list2="工数かんたん入力設定" />
+      <SidebarDropDown icon="★" label="申請" list1="休暇申請" list2="休日出勤申請" />
+      <SideBarButton icon=<BsGear /> label="スタッフ設定"/>
     </SsidebarAside>
   )
 };

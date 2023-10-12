@@ -19,9 +19,18 @@ export const SdropDownButton = styled.button`
     border:none;
     cursor:pointer;
     padding:10px;
+    position:relative;
+    &::after{
+      content:">";
+      position:absolute;
+      top:50%;
+      right:10px;
+      // transform: translateY(-50%);
+    }
+
     &:hover{
     background-color:#c0c0c0;
-};
+    };
 `;
 
 // SidebarDropDownContentDiv Style
@@ -30,18 +39,21 @@ const SdropdownContent = styled.div`
   font-size:12px;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 230px;
+  min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  right:10px;
-  border-bottom-left-radius:5px;
-  border-bottom-right-radius:5px;
+  left:230px;
+  // right:0px;
+  top:0px;
+  border-radius:5px;
 
   a {
-    color: #c1;
+    color: black;
+    text-align:left;
+    font-weight:bold;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    height:15px;
+    height:10px;
 
   }
 
@@ -50,17 +62,16 @@ const SdropdownContent = styled.div`
   }
 `;
 
-// 関数HeaderDropDown
-// props 2つ以上渡してリスト内の文字もprops化する
-export const SidebarDropDown = ()=>{
+// 関数HeaderDropDown(props icon,label,list1,list2)
+export const SidebarDropDown = (props)=>{
     const[show,setShow] = useState(false);
 
     return (
         <SdropDownDiv>
-            <SdropDownButton onClick={()=>setShow(!show)}>アカウント</SdropDownButton>
+            <SdropDownButton onClick={()=>setShow(!show)}>{props.icon}{props.label}</SdropDownButton>
             <SdropdownContent show={show}>
-                <a href="#">パスワード変更</a>
-                <a href="#">ログアウト</a>
+                <a href="#">{props.list1}</a>
+                <a href="#">{props.list2}</a>
             </SdropdownContent>
         </SdropDownDiv>
     );
