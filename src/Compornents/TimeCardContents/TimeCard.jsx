@@ -2,17 +2,35 @@ import React from "react";
 import styled from "styled-components";
 import { TimeCardHeader } from "./TimeCardCompornents/TimeCardHeader";
 import { Timer } from "./TimeCardCompornents/Timer";
-import { TimeCardDropDown } from "./TimeCardCompornents/TimeCardDropDown";
+import { TimeCardSelectBox } from "./TimeCardCompornents/TimeCardSelectBox";
+import { TimeCardInputBox } from "./TimeCardCompornents/TimeCardInputBox";
+import { TimeCardButtonBox } from "./TimeCardCompornents/TimeCardButtonBox";
+import { TimeCardRadioButtonBox } from "./TimeCardCompornents/TimeCardRadioButtonBox";
 
 // TimeCardDiv Style
 export const StimecardDiv = styled.div`
+  width:679.5px;
   background-color:white;
-  border-radius:3px;
-  height:500px;
+  border-radius:5px;
+  height:436.21px;
   margin-top:15px;
   margin-bottom:15px;
   margin-right:25px;
   margin-left:25px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+`;
+
+// Div Style
+export const Sdiv = styled.div`
+  display:flex;
+  justify-content:center;
+`;
+
+// P Style
+export const StimeCardP = styled.p`
+  width:383.88px;
+  font-size:13px;
+  margin-bottom:6.5px;
 `;
 
 //Main TimeCard Compornent
@@ -21,8 +39,11 @@ export const TimeCard = ()=>{
       <StimecardDiv>
         <TimeCardHeader />
         <Timer />
-        <p>打刻場所を選択してください</p>
-        <TimeCardDropDown label="ドロップダウン" list1="2" list2="3" />
+        <Sdiv><StimeCardP>打刻場所を選択してください</StimeCardP></Sdiv>
+        <TimeCardSelectBox />
+        <TimeCardInputBox />
+        <TimeCardButtonBox />
+        <TimeCardRadioButtonBox />
       </StimecardDiv>
     )
 };
