@@ -8,19 +8,26 @@ import { CardBody } from "./Compornents/Card/CardBody";
 import { BodyHooter } from "./BodyHooter";
 
 
+const Smain = styled.main`
+  display:flex;
+  height:100vh;
+  width:100%;
+  background-color:#F7F7F7;
+`;
 
-// //main内Div1
-// export const MainDiv1 = styled.div`
-//   margin-top:15px;
-//   margin-bottom:15px;
-//   margin-right:25px;
-//   margin-left:25px;
-// `;
-
-
+const SbodyDiv = styled.div`
+  background-color:#F7F7F7;
+  max-width:1110px;
+  min-width:696px;
+  position:relative;
+  padding-left:15px;
+  padding-right:15px;
+`;
 
 export const App = () =>{
   return (
+    
+    
     <div style={{height:'100vh'}}>
 
     {/* ヘッダー */}
@@ -28,23 +35,19 @@ export const App = () =>{
     <Header2 />
 
     {/* ボディdiv */}
-    <div style={{display:'flex' ,height:'100vh' ,backgroundColor:'#e0e0e0'}}>
+    <Smain >
 
     {/* サイドバー */}
     <SideBar />
 
     {/* メインコンテンツ */}
-    <main style={{backgroundColor:'#F7F7F7',flexGrow:'1'}}>
+    <SbodyDiv>
       <TimeCard />
       <CardBody />
       <BodyHooter />
-    </main>
+    </SbodyDiv>
 
-  
-
-    </div>
-
-    {/* フッター */}
+    </Smain>
 
 
     </div>

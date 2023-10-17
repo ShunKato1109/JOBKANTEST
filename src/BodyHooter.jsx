@@ -4,10 +4,11 @@ import styled from "styled-components";
 // Hooter div Style
 export const HooterDiv = styled.div`
     display:flex;
+    position:absolute;
+    bottom:0;
     background-color:#333333;
     height:45.5px;
     width:100%;
-    // margin-top:100%;
     font-size:13px;
     color:#FFFFFF;
     align-items:center;

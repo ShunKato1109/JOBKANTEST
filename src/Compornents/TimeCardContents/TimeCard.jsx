@@ -9,14 +9,14 @@ import { TimeCardRadioButtonBox } from "./TimeCardCompornents/TimeCardRadioButto
 
 // TimeCardDiv Style
 export const StimecardDiv = styled.div`
-  width:679.5px;
+  max-width:1110px;
   background-color:white;
   border-radius:5px;
   height:436.21px;
   margin-top:15px;
   margin-bottom:15px;
-  margin-right:25px;
-  margin-left:25px;
+  margin-right:13px;
+  margin-left:13px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
 `;
 

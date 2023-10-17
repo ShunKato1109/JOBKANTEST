@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 // Card div
 const ScardDiv = styled.div`
-    width:349.5px;
-    margin-left:25px;
+    // flex-grow:1;
+    width:50%;
+    margin-right:15px;
+    margin-left:15px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
 `;
 
@@ -14,7 +16,6 @@ export const ScardHeaderDiv = styled.div`
     height:39px;
     background-color:#E6E6E6;
     align-items:center;
-    padding-left:9.75px;
     border-radius:5px 5px 0px 0px;
     color:#333333;
     font-size:13px;
