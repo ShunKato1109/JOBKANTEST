@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+const ShooterMaindiv = styled.div`
+  flex-grow:1;
+  margin-top:auto;
+`;
+
 // Hooter div Style
-export const HooterDiv = styled.div`
+const ShooterDiv = styled.div`
     display:flex;
-    position:absolute;
-    bottom:0;
     background-color:#333333;
     height:45.5px;
     width:100%;
+    margin-top:auto;
     font-size:13px;
     color:#FFFFFF;
     align-items:center;
@@ -16,10 +20,10 @@ export const HooterDiv = styled.div`
 `;
 
 // BodyHooter Compornent
-export const BodyHooter = ()=>{
+export const HooterMain = ()=>{
   return(
-    <div style={{display:'flex'}}>
-    <HooterDiv>©2010 DONUTS Co.ltd.</HooterDiv>
-    </div>
+    <ShooterMaindiv>
+     <ShooterDiv>©2010 DONUTS Co.ltd.</ShooterDiv>
+    </ShooterMaindiv>
   )
 };

@@ -46,7 +46,7 @@ export const SthirdRowItem = styled.div`
 
 //Header1 button css
 export const SheadButton1={
-  fontSize:'1px',
+  fontSize:'11px',
   paddingLeft:'25px',
   paddingRight:'25px',
   cursor:'pointer',

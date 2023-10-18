@@ -15,5 +15,5 @@ export const ResponsiveHeader = ()=>{
         return()=>window.removeEventListener('resize',handleResize);
     },[]);
 
-    return windowWidth > 600 ? <WideDeskTopHeader />:<NarrowDeskTopHeader />;
+    return windowWidth > 800 ? <WideDeskTopHeader />:<NarrowDeskTopHeader />;
 };
