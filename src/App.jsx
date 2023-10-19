@@ -26,7 +26,7 @@ const SbodyDiv = styled.div`
 export const App = () =>{
   return (
 
-    <div style={{height:'100vh'}}>
+    <div style={{height:'100vh',minWidth:'500px',position:'relative'}}>
 
     {/* ヘッダー */}
       <HeaderBody />

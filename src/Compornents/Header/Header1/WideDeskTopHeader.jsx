@@ -105,7 +105,7 @@ export const HeadButton1 =(props)=>{
 //WideDeskTopCompornent
 export const WideDeskTopHeader = ()=>{
     return (
-        <Sheader1>
+    <Sheader1>
       <SfirstRowItem>
         <HeadButton1 label="ジョブカン" />
       </SfirstRowItem>
