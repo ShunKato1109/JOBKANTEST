@@ -9,10 +9,8 @@ export const SinputBoxDiv = styled.div`
 
 // InputBox Style
 export const SinputBoxInput = styled.input`
-    width:373.88px;
+    width:100%;
     height:35px;
-    margin-right:10px;
-    margin-left:10px;
     padding:5px;
 `;
 

@@ -7,7 +7,7 @@ export const Sdiv = styled.div`
 `;
 
 export const SradioButtonDiv = styled.div`
-    width:383.88px;
+    width:100%;;
     margin-top:10px;
     font-size:13px;
 `;

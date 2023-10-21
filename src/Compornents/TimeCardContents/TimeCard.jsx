@@ -9,7 +9,7 @@ import { TimeCardRadioButtonBox } from "./TimeCardCompornents/TimeCardRadioButto
 
 // TimeCardDiv Style
 export const StimecardDiv = styled.div`
-  max-width:1110px;
+  max-width:100%;
   background-color:white;
   border-radius:5px;
   height:436.21px;
@@ -40,22 +40,35 @@ export const TimeCard = ()=>{
         <TimeCardHeader />
         <Timer />
 
-      <TimeCardCrlBoxDiv>
+      <StimeCardBoxDiv>
+      <StimeCardBoxCrlDiv>
         <Sdiv><StimeCardP>打刻場所を選択してください</StimeCardP></Sdiv>
         <TimeCardSelectBox />
         <TimeCardInputBox />
         <TimeCardButtonBox />
         <TimeCardRadioButtonBox />
-      </TimeCardCrlBoxDiv>
+      </StimeCardBoxCrlDiv>
+      </StimeCardBoxDiv>
       
       
       </StimecardDiv>
     )
 };
 
-// Style TimeCardCrlBox Div
-const TimeCardCrlBoxDiv = styled.div`
-  display:flex;
-  flex-direction:column;
 
+// Style TimeCardBox Div
+const StimeCardBoxDiv = styled.div`
+  width:100%;
+  display:flex;
+  justify-content: center; 
+`;
+
+// Style TimeCardBoxCrl Div
+const StimeCardBoxCrlDiv = styled.div`
+  display:flex;
+  width:58%;
+  padding-right:15px;
+  padding-left:15px;
+  flex-direction:column;
+  max-width:58%;
 `;

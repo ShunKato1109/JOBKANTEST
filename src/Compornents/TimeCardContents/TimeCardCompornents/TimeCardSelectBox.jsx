@@ -9,7 +9,7 @@ export const SselectBoxDiv = styled.div`
 `;
 
 export const SselectBoxSelect = styled.select`
-    width:383.88px;
+    width:100%;
     height:30px;
     margin-bottom:10px;
     padding:5px;

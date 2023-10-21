@@ -7,7 +7,7 @@ export const Sheader1 = styled.header`
     border:0.5px solid gray;
     display:flex;
     color:white;
-    height:50px;
+    // height:50px;
     flex-direction:column;
 `;
 
@@ -45,7 +45,7 @@ export const SthirdRowItem = styled.div`
 `;
 
 
-//Header1Button CSS
+//Style Header1Button
 export const SheadButton1={
     fontSize:'11px',
     paddingLeft:'25px',
@@ -55,7 +55,7 @@ export const SheadButton1={
     borderRight:'0.5px solid gray',
 };
 
-//HeaderButton2 CSS
+//Style HeaderButton2
 export const SheadButton2={
     fontSize:'10px',
     paddingLeft:'25px',
