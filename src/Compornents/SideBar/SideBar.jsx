@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router,Link } from 'react-router-dom';
 import { SidebarDropDown } from "./SidebarDropDown";
@@ -8,15 +8,15 @@ import {BsGear} from "react-icons/bs";
 import {HiWrenchScrewdriver} from "react-icons/hi2";
 import {PiNotePencilDuotone} from "react-icons/pi";
 
-//SideBar Style
+//Style Sidebar
 export const SsidebarAside = styled.aside`
-  width:240px;
+  width:${props =>(props.isOpen ? '240px': '0px')};
   height:100vh;
   text-align:right;
   background-color:#e0e0e0;
 `;
 
-// Button Style
+// Style Button 
 export const SsideButton = styled.button`
   background-color:transparent;
   color:black;
@@ -31,12 +31,12 @@ export const SsideButton = styled.button`
   };
 `;
 
-//関数SideBarButton(props icon,label)
+//Component SideBarButton
 export const SideBarButton =(props)=>{
   return <SsideButton>{props.icon}　{props.label}</SsideButton>
 };
 
-// Compornent Navigate(=>AttendRecordPage)
+// Component NavigateButton(=>AttendRecordPage)
 export const NavigateButton = (props) => {
   return (
     <Link to="/attendrecord-page">
@@ -46,13 +46,12 @@ export const NavigateButton = (props) => {
 };
 
 
-// Button Style
+// Style CancelButton
 export const ScancelButton = styled.button`
   background-color:transparent;
   color:black;
   font-size:30px;
   height:40px;
-  width:240px;
   text-align:right;
   border:none;
   cursor:pointer;
@@ -60,13 +59,24 @@ export const ScancelButton = styled.button`
 
 //関数CancelButton
 export const CancelButton = ()=>{
-  return <ScancelButton>×</ScancelButton>
+
+  const [isOpen,setIsOpen] = useState(true);
+
+  const toggleSidebar =()=>{
+    setIsOpen(!isOpen);
+  };
+
+  return (
+  <ScancelButton onClick={toggleSidebar}>×</ScancelButton>
+  )
 };
 
 // SidebarCompornent
 export const SideBar = ()=>{
+  const [isOpen, setIsOpen] = useState(true);
+
   return(
-    <SsidebarAside>
+    <SsidebarAside isOpen={isOpen}>
       <CancelButton />
       <NavigateButton icon=<SlCalender /> label="出勤簿"/>
       <SideBarButton icon=<TbClockEdit /> label="打刻修正"/>

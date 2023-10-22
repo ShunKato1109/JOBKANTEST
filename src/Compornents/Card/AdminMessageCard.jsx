@@ -12,7 +12,7 @@ const ScardDiv = styled.div`
 // CardHeader div Style
 export const ScardHeaderDiv = styled.div`
     display:flex;
-    height:39px;
+    padding:9.75px 16.25px 9.75px 16.25px;
     background-color:#E6E6E6;
     align-items:center;
     border-radius:5px 5px 0px 0px;
@@ -29,15 +29,32 @@ export const CardHeader = (props)=>{
 
 // CardBody div Style
 export const ScardBodyDiv = styled.div`
-    height:111.83px;
     background-color:#FFFFFF;
     border-radius:0px 0px 5px 5px;
+    padding:16.25px;
 `;
+
+// Style AdminMsg
+const SadminMsg = styled.div`
+    color:black;
+    font-size:13px;
+`;
+
+// Compornent AdminMsg
+export const AdminMsg = (props)=>{
+    return(
+        <SadminMsg>
+            <div>{props.msg}</div>
+        </SadminMsg>
+    )
+};
 
 // CardBody Compornent
 export const Cardbody = ()=>{
     return(
-        <ScardBodyDiv>はいよ</ScardBodyDiv>
+        <ScardBodyDiv>
+            <AdminMsg msg="管理者からのメッセージはありません"/>
+        </ScardBodyDiv>
     )
 };
 
