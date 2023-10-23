@@ -10,7 +10,8 @@ import {PiNotePencilDuotone} from "react-icons/pi";
 
 //Style Sidebar
 export const SsidebarAside = styled.aside`
-  width:${props =>(props.isOpen ? '240px': '0px')};
+  // width:${props =>(props.isOpen ? '240px': '0px')};
+  width:240px;
   height:100vh;
   text-align:right;
   background-color:#e0e0e0;
@@ -58,31 +59,55 @@ export const ScancelButton = styled.button`
 `;
 
 //関数CancelButton
-export const CancelButton = ()=>{
+export const CancelButton = ({isOpen,toggleSidebar,label})=>{
 
-  const [isOpen,setIsOpen] = useState(true);
+  return (
+  <ScancelButton onClick={toggleSidebar}>{label}</ScancelButton>
+  )
+};
+
+// Compornent Sidebar
+export const SideBar = (props)=>{
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar =()=>{
     setIsOpen(!isOpen);
   };
 
-  return (
-  <ScancelButton onClick={toggleSidebar}>×</ScancelButton>
+  return(
+    <div>
+      {isOpen ? <WideSideBar isOpen={isOpen} toggleSidebar={toggleSidebar}/> : <CloseSideBar isOpen={isOpen} toggleSidebar={toggleSidebar}/>}
+    </div>
   )
 };
 
-// SidebarCompornent
-export const SideBar = ()=>{
-  const [isOpen, setIsOpen] = useState(true);
-
+// Component WideSideBar
+export const WideSideBar = ({isOpen,toggleSidebar,label})=>{
   return(
     <SsidebarAside isOpen={isOpen}>
-      <CancelButton />
-      <NavigateButton icon=<SlCalender /> label="出勤簿"/>
-      <SideBarButton icon=<TbClockEdit /> label="打刻修正"/>
-      <SidebarDropDown icon=<HiWrenchScrewdriver />  label="工数管理" list1="工数管理" list2="工数かんたん入力設定" />
-      <SidebarDropDown icon=<PiNotePencilDuotone /> label="申請" list1="休暇申請" list2="休日出勤申請" />
-      <SideBarButton icon=<BsGear /> label="スタッフ設定"/>
-    </SsidebarAside>
+    <CancelButton isOpen={isOpen} toggleSidebar={toggleSidebar} label="×"/>
+    <NavigateButton icon=<SlCalender /> label="出勤簿"/>
+    <SideBarButton icon=<TbClockEdit /> label="打刻修正"/>
+    <SidebarDropDown icon=<HiWrenchScrewdriver />  label="工数管理" list1="工数管理" list2="工数かんたん入力設定" />
+    <SidebarDropDown icon=<PiNotePencilDuotone /> label="申請" list1="休暇申請" list2="休日出勤申請" />
+    <SideBarButton icon=<BsGear /> label="スタッフ設定"/>
+  </SsidebarAside>
+  )
+};
+
+// Style CloseSideBar
+export const ScloseSideBar = styled.aside`
+  width:48.19px;
+  height:100vh;
+  text-align:center;
+  background-color:#e0e0e0;
+`;
+
+// Component CloseSideBar
+export const CloseSideBar = ({isOpen,toggleSidebar, label})=>{
+  return(
+    <ScloseSideBar>
+      <CancelButton isOpen={isOpen} toggleSidebar={toggleSidebar} label="三"/>
+    </ScloseSideBar>
   )
 };
