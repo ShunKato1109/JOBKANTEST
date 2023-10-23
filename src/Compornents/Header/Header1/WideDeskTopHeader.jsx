@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HeaderDropDown } from "./HeaderDropDown";
 
 
-//header1 Css
+//Style Header1 Div
 export const Sheader1 = styled.header`
 background-color:#222222;
 border:0.5px solid gray;
@@ -13,7 +13,7 @@ height:25px;
 }
 `;
 
-//FirstRowDiv Css
+//Style FirstRowItem Div
 export const SfirstRowItem = styled.div`
 display:flex;
 height:100%;
@@ -23,7 +23,7 @@ flex-shrink:0;
 }
 `;
 
-//SecondRowDiv Css
+//Style SecondROwItem Div
 export const SsecondRowItem = styled.div`
     display:flex;
     height:100%;
@@ -33,7 +33,7 @@ export const SsecondRowItem = styled.div`
     }
 `;
 
-//ThirdRowDiv Css
+//Style TirdRowItem Div
 export const SthirdRowItem = styled.div`
     display:flex;
     height:100%;
@@ -66,17 +66,17 @@ export const SheadButton2={
 
   //Header button3 css
 export const SheadButton3={
-    color:'#c0c0c0',
-    backgroundColor:'transparent',
-    fontSize:'10px',
-    marginLeft:'auto',
-    paddingLeft:'25px',
-    paddingRight:'25px',
-    cursor:'pointer',
-    height:'100%',
-    borderRight:'0.5px solid gray',
+  fontSize:'10px',
+  backgroundColor:'#1880FB',
+  color:'white',
+  paddingLeft:'25px',
+  paddingRight:'25px',
+  cursor:'pointer',
+  height:'100%',
+  borderRight:'0.5px solid gray',
   };
 
+  // Style HeadButton
   export const SHeadButton = styled.button`
   color:#c0c0c0;
   background-color:transparent;
@@ -86,17 +86,17 @@ export const SheadButton3={
   }
   `; 
 
-  //header1 button Compornent
+  //Component HeadButton1
 export const HeadButton1 =(props)=>{
     return <SHeadButton style={SheadButton1}>{props.label}</SHeadButton>
   };
   
-  //header button2 Compornent
+  //Component HeadButton2
   export const HeadButton2 =(props)=>{
     return <SHeadButton style={SheadButton2}>{props.label}</SHeadButton>
   };
 
-    //header button3 Compornent
+    //Component HeadButton3
     export const HeadButton3 =(props)=>{
         return <button style={SheadButton3}>{props.label}</button>
       };
@@ -110,7 +110,7 @@ export const WideDeskTopHeader = ()=>{
         <HeadButton1 label="ジョブカン" />
       </SfirstRowItem>
       <SsecondRowItem>
-        <HeadButton2 label="勤怠" />
+        <HeadButton3 label="勤怠" />
         <HeadButton2 label="労務" />
         <HeadButton2 label="給与" />
         <HeaderDropDown />

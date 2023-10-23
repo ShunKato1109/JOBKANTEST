@@ -4,10 +4,11 @@ import styled from "styled-components";
 //Header1 Style
 export const Sheader1 = styled.header`
     background-color:#222222;
+    width:100%;
+    height:47.99px;
     border:0.5px solid gray;
     display:flex;
     color:white;
-    // height:50px;
     flex-direction:column;
 `;
 
@@ -76,6 +77,17 @@ export const SlogOutButton={
     borderLeft:'0.5px solid gray',
   };
 
+  export const SheadButton3={
+    fontSize:'10px',
+    backgroundColor:'#1880FB',
+    color:'white',
+    paddingLeft:'25px',
+    paddingRight:'25px',
+    cursor:'pointer',
+    height:'100%',
+    borderRight:'0.5px solid gray',
+    };
+
   //HeadButton Style
   export const SHeadButton = styled.button`
     color:#c0c0c0;
@@ -96,6 +108,12 @@ export const HeadButton1 =(props)=>{
     return <SHeadButton style={SheadButton2}>{props.label}</SHeadButton>
   };
 
+
+  //Component HeadButton3
+  export const HeadButton3 =(props)=>{
+     return <button style={SheadButton3}>{props.label}</button>
+   };
+
     //LogOutButton Compornent
     export const LogOutButton =(props)=>{
         return <SHeadButton style={SlogOutButton}>{props.label}</SHeadButton>
@@ -110,7 +128,7 @@ export const HeadButton1 =(props)=>{
               <HeadButton1 label="ジョブカン" />
             </SfirstRowItem>
             <SsecondRowItem>
-              <HeadButton2 label="勤怠" />
+              <HeadButton3 label="勤怠" />
               <HeadButton2 label="労務" />
               <HeadButton2 label="給与" />
               <LogOutButton label="ログアウト" />

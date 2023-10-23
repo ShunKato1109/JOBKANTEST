@@ -19,16 +19,18 @@ const App = ()=>{
   )
 };
 
+const Sdiv = styled.div`
+  height:100vh;
+`;
+
 const Smain = styled.main`
   display:flex;
   flex-direction: column;
-  height:100vh;
   width:100%:
   background-color:#F7F7F7;
 `;
 
 const SbodyDiv = styled.div`
-  // background-color:#F7F7F7;
   width:100%;
   max-width:1110px;
   min-width:696px;
@@ -36,10 +38,12 @@ const SbodyDiv = styled.div`
   padding-right:15px;
 `;
 
+
+
 export const Home = () =>{
   return (
 
-    <div style={{height:'100vh',minWidth:'500px',position:'relative'}}>
+    <Sdiv>
 
     {/* ヘッダー */}
       <HeaderBody />
@@ -49,8 +53,8 @@ export const Home = () =>{
       <Smain >
       
         <div style={{display:'flex'}}>
-          {/* サイドバー */}
-    
+      
+    {/* サイドバー */}
       <SideBar />
     
     {/* メインコンテンツ */}
@@ -64,7 +68,7 @@ export const Home = () =>{
         <HooterBody />
     </Smain>
 
-    </div>    
+    </Sdiv>    
   );
 }
 
