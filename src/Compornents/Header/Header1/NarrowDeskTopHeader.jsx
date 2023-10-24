@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-//Header1 Style
-export const Sheader1 = styled.header`
+
+/* ======================================================================== */  
+/* ============================ Styles ==================================== */  
+/* ======================================================================== */ 
+
+/* ====== Styled Components ====== */
+
+const Sheader1 = styled.header` //Header外枠
     background-color:#222222;
     width:100%;
     height:47.99px;
@@ -12,8 +18,7 @@ export const Sheader1 = styled.header`
     flex-direction:column;
 `;
 
-//FirstRowDiv Style
-export const SfirstRowItem = styled.div`
+const SfirstRowItem = styled.div` //ヘッダー1段目枠
     display:flex;
     height:50%;
     width:100%;
@@ -24,8 +29,7 @@ export const SfirstRowItem = styled.div`
     }
 `;
 
-//SecondRowDiv Style
-export const SsecondRowItem = styled.div`
+const SsecondRowItem = styled.div` //ヘッダー2段目枠
     display:flex;
     height:50%;
     width:100%;
