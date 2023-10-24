@@ -6,13 +6,13 @@ import { TimeCard } from "./Compornents/TimeCardContents/TimeCard";
 import { CardBody } from "./Compornents/Card/CardBody";
 import { HeaderBody } from "./Compornents/Header/HeaderBody";
 import { HooterBody } from "./Compornents/Hooter/HooterBody";
-import { AttendRecordPage } from "./AttendRecordPage";
+import WorkRecordPage from "./01Page/WorkRecord";
 
 const App = ()=>{
   return(
   <BrowserRouter>
     <Routes>
-    <Route path="/attendrecord-page" element={<AttendRecordPage />} />
+    <Route path="/workrecord-page" element={<WorkRecordPage />} />
     <Route path="/" element={<Home />} />
     </Routes>
   </BrowserRouter>

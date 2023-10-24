@@ -40,7 +40,7 @@ export const SideBarButton =(props)=>{
 // Component NavigateButton(=>AttendRecordPage)
 export const NavigateButton = (props) => {
   return (
-    <Link to="/attendrecord-page">
+    <Link to="/workrecord-page">
       <SsideButton>{props.icon}　{props.label}</SsideButton>
     </Link>
   );
