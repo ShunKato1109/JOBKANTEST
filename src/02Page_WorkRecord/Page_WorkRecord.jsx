@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { HeaderBody } from "../Compornents/Header/HeaderBody";
-import { WorkRecordBody } from "../02Body";
+import { HeaderBody } from "../Components/Header/HeaderBody";
+import { WorkRecordBody } from "./02Components/Body/02Body";
 
 /* ======================================================================== */  
 /* ============================ Styles ==================================== */  

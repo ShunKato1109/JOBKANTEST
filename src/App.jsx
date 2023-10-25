@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter} from 'react-router-dom';
-import { SideBar} from "./Compornents/SideBar/SideBar";
-import { TimeCard } from "./Compornents/TimeCardContents/TimeCard";
-import { CardBody } from "./Compornents/Card/CardBody";
-import { HeaderBody } from "./Compornents/Header/HeaderBody";
-import { HooterBody } from "./Compornents/Hooter/HooterBody";
-import WorkRecordPage from "./01Page/WorkRecord";
+import { SideBar} from "./Components/SideBar/SideBar";
+import { TimeCard } from "./01Page_Home/Components/Card/TimeCard/TimeCard";
+import { CardBody } from "./01Page_Home/Components/Card/CardBody";
+import { HeaderBody } from "./Components/Header/HeaderBody";
+import { HooterBody } from "./Components/Hooter/HooterBody";
+import WorkRecordPage from "./02Page_WorkRecord/Page_WorkRecord";
 
 const App = ()=>{
   return(

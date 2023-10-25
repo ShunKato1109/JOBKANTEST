@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { WideDeskTopHeader } from "./WideDeskTopHeader";
 import { NarrowDeskTopHeader } from "./NarrowDeskTopHeader";
 import {useState,useEffect} from "react";
