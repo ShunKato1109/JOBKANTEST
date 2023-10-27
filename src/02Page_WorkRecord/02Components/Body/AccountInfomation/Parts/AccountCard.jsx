@@ -9,6 +9,7 @@ import styled from "styled-components";
 const Sdiv = styled.div` //関数全体を囲うスタイル
     flex:1;
     padding:0px 15px 0px 15px;
+    // margin:15px 0px 15px 0px;
     color:#333333;
 `;
 
@@ -59,7 +60,7 @@ const ScardBodyRmsgdiv = styled.div` //カード内行の右側を囲うスタ�
 // アカウントカードを呼び出す関数(Props:headlabel/)
 export const AccountCard = (props)=>{
     return(
-        <Sdiv>
+        <Sdiv style={props.style}>
          <Scarddiv>
             <ScardHeaderdiv>{props.headlabel}</ScardHeaderdiv>
             <ScardBodydiv>
