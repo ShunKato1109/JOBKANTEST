@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { TimeCardHeader } from "../../../TimeCard/Parts/TimeCardHeader";
-import { Timer } from "../../../TimeCard/Parts/Timer";
-import { TimeCardSelectBox } from "../../../TimeCard/Parts/TimeCardSelectBox";
-import { TimeCardInputBox } from "../../../TimeCard/Parts/TimeCardInputBox";
-import { TimeCardButtonBox } from "../../../TimeCard/Parts/TimeCardButtonBox";
-import { TimeCardRadioButtonBox } from "../../../TimeCard/Parts/TimeCardRadioButtonBox";
+import { TimeCardHeader } from "./Parts/TimeCardHeader";
+import { TimeCardSelectBox } from "./Parts/TimeCardSelectBox";
+import { TimeCardButtonBox } from "./Parts/TimeCardButtonBox";
+import { TimeCardRadioButtonBox } from "./Parts/TimeCardRadioButtonBox";
+import { Timer } from "./Parts/Timer";
+import { TimeCardInputBox } from "./Parts/TimeCardInputBox";
 
 // TimeCardDiv Style
 export const StimecardDiv = styled.div`
