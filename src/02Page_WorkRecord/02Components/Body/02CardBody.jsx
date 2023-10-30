@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { DateBox } from "./02DateBox";
 import { AccountInfo } from "./AccountInfomation/AccountInfo";
+import { Calender } from "../Calender/Calender";
 
 /* ======================================================================== */  
 /* ============================ Styles ==================================== */  
@@ -28,6 +29,7 @@ export const WRCardBody = ()=>{
             <SwrCardTitle>2023年10月度の出勤簿</SwrCardTitle>
             <DateBox />
             <AccountInfo />
+            <Calender />
         </SwrCardBody>
     )
 }; 
