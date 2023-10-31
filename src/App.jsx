@@ -19,18 +19,27 @@ const App = ()=>{
   )
 };
 
+/* ======================================================================== */  
+/* ============================ Styles ==================================== */  
+/* ======================================================================== */ 
+
+/* ====== Styled Components ====== */
+
 const Sdiv = styled.div`
-  height:100vh;
+  height:100%;
 `;
 
 const Smain = styled.main`
   display:flex;
+  height:100vh;
   flex-direction: column;
   width:100%:
-  background-color:#F7F7F7;
+  // background-color:#F7F7F7;
+  background-color:red;
 `;
 
 const SbodyDiv = styled.div`
+  height:100%;
   width:100%;
   max-width:1110px;
   min-width:696px;
@@ -38,8 +47,12 @@ const SbodyDiv = styled.div`
   padding-right:15px;
 `;
 
+/* ======================================================================== */  
+/* ============================ Components ================================ */  
+/* ======================================================================== */ 
 
-
+/* ====== Components ====== */
+//ホームページを呼び出す関数
 export const Home = () =>{
   return (
 

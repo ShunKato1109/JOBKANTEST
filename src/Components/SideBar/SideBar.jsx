@@ -12,7 +12,7 @@ import {PiNotePencilDuotone} from "react-icons/pi";
 export const SsidebarAside = styled.aside`
   // width:${props =>(props.isOpen ? '240px': '0px')};
   width:240px;
-  height:100vh;
+  height:100%;
   text-align:right;
   background-color:#e0e0e0;
 `;
