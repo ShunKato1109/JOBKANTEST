@@ -1,10 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-// Style CardHeader Div
+/* ======================================================================== */  
+/* ============================ Styles ==================================== */  
+/* ======================================================================== */ 
+
+// ユーザー情報カード関数全体を囲うスタイル
+const ScardDiv = styled.div`
+    width:50%;
+    margin:0px 15px 0px 15px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    border-radius:5px 5px 5px 5px;
+`;
+
+// ユーザー情報カード内のヘッダーを囲うスタイル
 export const ScardHeaderDiv = styled.div`
     display:flex;
-    // height:39px;
     padding:9.75px 16.25px 9.75px 16.25px;
     background-color:#E6E6E6;
     align-items:center;
@@ -13,15 +24,15 @@ export const ScardHeaderDiv = styled.div`
     font-size:13px;
 `;
 
-// Component CardHeader
-export const CardHeader = (props)=>{
-    return(
-        <ScardHeaderDiv>{props.headerlabel}</ScardHeaderDiv>
-    )
-};
+// ユーザー情報カードのボディを囲うスタイル
+export const ScardBodyDiv = styled.div`
+    background-color:#FFFFFF;
+    border-radius:0px 0px 5px 5px;
+    padding:16.25px;
+`;
 
-// Style UserMsg
-const SuserMsg = styled.div`
+// ユーザー情報カードボディ内のテキスト行を囲うスタイル
+const SuserMsgRow = styled.div`
     display:flex;
     justify-content:space-between;
     color:#ADADAD;
@@ -30,50 +41,55 @@ const SuserMsg = styled.div`
     border-top:1px solid
 `;
 
-// Component UserMsg
-export const UserMsg = (props)=>{
+/* ======================================================================== */  
+/* ============================== Arry ==================================== */  
+/* ======================================================================== */ 
+// ユーザー情報カード内のテキスト配列
+const userMsg = [ 
+    {lefttext:"打刻忘れ・漏れ",righttext:"0件"},
+    {lefttext:"打刻エラー",righttext:"0件"},
+];
+
+/* ======================================================================== */  
+/* ========================= Helper Components ============================ */  
+/* ======================================================================== */ 
+
+// ユーザー情報カードのヘッダーを呼び出す関数
+export const CardHeader = (props)=>{
     return(
-        <SuserMsg>
-            <div>{props.msg}</div>
-            <div style={{alignItems:'right'}}>{props.msgcount}</div>
-        </SuserMsg>
+        <ScardHeaderDiv>{props.headerlabel}</ScardHeaderDiv>
     )
 };
 
+// ユーザ情報カード内のテキストを呼び出す関数
+export const UserMsgText = (props)=>{
+    return(
+        <SuserMsgRow>
+            <div>{props.lefttext}</div>
+            <div style={{alignItems:'right'}}>{props.righttext}</div>
+        </SuserMsgRow>
+    )
+};
 
-// Style CardBody Div
-export const ScardBodyDiv = styled.div`
-    background-color:#FFFFFF;
-    border-radius:0px 0px 5px 5px;
-    padding:16.25px;
-`;
-
-// Component CardBody
-export const Cardbody = ()=>{
+// ユーザー情報カードのボディを呼び出す関数
+export const Cardbody = (props)=>{
     return(
         <ScardBodyDiv>
-            <UserMsg msg="打刻忘れ・漏れ" msgcount="0件" />
-            <UserMsg msg="打刻エラー" msgcount="0件" />
+            {props.arry.map(userMsg=><UserMsgText lefttext={userMsg.lefttext} righttext={userMsg.righttext} />)}
         </ScardBodyDiv>
     )
 };
 
 
-// Style Card Div
-const ScardDiv = styled.div`
-    // flex-grow:1;
-    width:50%;
-    margin-right:15px;
-    margin-left:15px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-`;
-
-// Component UserMsgCard
+/* ======================================================================== */  
+/* ============================ Components ================================ */  
+/* ======================================================================== */ 
+// ユーザー情報カードを呼び出す関数
 export const UserMessageCard = (props)=>{
     return(
         <ScardDiv>
-        <CardHeader headerlabel="以下の項目の確認をお願いいたします。"/>
-        <Cardbody />
+            <CardHeader headerlabel="以下の項目の確認をお願いいたします。"/>
+            <Cardbody arry={userMsg} />
         </ScardDiv>
     )
 };

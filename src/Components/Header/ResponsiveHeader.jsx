@@ -1,5 +1,5 @@
 import React from "react";
-import { WideDeskTopHeader } from "./WideDeskTopHeader";
+import { WideHeader } from "./WideHeader";
 import { NarrowDeskTopHeader } from "./NarrowDeskTopHeader";
 import {useState,useEffect} from "react";
 
@@ -14,5 +14,5 @@ export const ResponsiveHeader = ()=>{
         return()=>window.removeEventListener('resize',handleResize);
     },[]);
 
-    return windowWidth > 800 ? <WideDeskTopHeader />:<NarrowDeskTopHeader />;
+    return windowWidth > 800 ? <WideHeader />:<NarrowDeskTopHeader />;
 };

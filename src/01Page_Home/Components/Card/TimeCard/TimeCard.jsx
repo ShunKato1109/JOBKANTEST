@@ -7,6 +7,11 @@ import { TimeCardRadioButtonBox } from "./Parts/TimeCardRadioButtonBox";
 import { Timer } from "./Parts/Timer";
 import { TimeCardInputBox } from "./Parts/TimeCardInputBox";
 
+/* ======================================================================== */  
+/* ============================ Styles ==================================== */  
+/* ======================================================================== */ 
+
+/* ====== Styled Components ====== */
 // TimeCardDiv Style
 export const StimecardDiv = styled.div`
   max-width:100%;
@@ -33,6 +38,27 @@ export const StimeCardP = styled.p`
   margin-bottom:6.5px;
 `;
 
+// Style TimeCardBox Div
+const StimeCardBoxDiv = styled.div`
+  width:100%;
+  display:flex;
+  justify-content: center; 
+`;
+
+// Style TimeCardBoxCrl Div
+const StimeCardBoxCrlDiv = styled.div`
+  display:flex;
+  width:58%;
+  padding-right:15px;
+  padding-left:15px;
+  flex-direction:column;
+  max-width:58%;
+`;
+
+/* ======================================================================== */  
+/* ============================ Components ================================ */  
+/* ======================================================================== */ 
+
 //Main TimeCard Compornent
 export const TimeCard = ()=>{
     return(
@@ -56,19 +82,3 @@ export const TimeCard = ()=>{
 };
 
 
-// Style TimeCardBox Div
-const StimeCardBoxDiv = styled.div`
-  width:100%;
-  display:flex;
-  justify-content: center; 
-`;
-
-// Style TimeCardBoxCrl Div
-const StimeCardBoxCrlDiv = styled.div`
-  display:flex;
-  width:58%;
-  padding-right:15px;
-  padding-left:15px;
-  flex-direction:column;
-  max-width:58%;
-`;

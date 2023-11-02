@@ -5,8 +5,8 @@ import { SideBar} from "./Components/SideBar/SideBar";
 import { TimeCard } from "./01Page_Home/Components/Card/TimeCard/TimeCard";
 import { CardBody } from "./01Page_Home/Components/Card/CardBody";
 import { HeaderBody } from "./Components/Header/HeaderBody";
-import { HooterBody } from "./Components/Hooter/HooterBody";
 import WorkRecordPage from "./02Page_WorkRecord/Page_WorkRecord";
+import { FooterMain } from "./Components/Hooter/FooterMain";
 
 const App = ()=>{
   return(
@@ -24,22 +24,27 @@ const App = ()=>{
 /* ======================================================================== */ 
 
 /* ====== Styled Components ====== */
-
-const Sdiv = styled.div`
-  height:100%;
+const ShomeWindow = styled.div` //Window全体を囲うスタイル
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  background-color:#F7F7F7;
 `;
 
-const Smain = styled.main`
+const Sdiv = styled.main` //ヘッダーより下部を囲うスタイル
   display:flex;
   height:100vh;
-  flex-direction: column;
-  width:100%:
-  // background-color:#F7F7F7;
-  background-color:red;
+  width:100%;
 `;
 
-const SbodyDiv = styled.div`
+const SmainBody = styled.div` //MainBody関数全体を囲うスタイル
   height:100%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+`;
+
+const SBodyParts = styled.div` //MainBodyスタイル内の時計とお知らせを囲うスタイル
   width:100%;
   max-width:1110px;
   min-width:696px;
@@ -47,41 +52,39 @@ const SbodyDiv = styled.div`
   padding-right:15px;
 `;
 
+
+/* ======================================================================== */  
+/* ========================= Helper Components ============================ */  
+/* ======================================================================== */ 
+// メインボディを呼び出す関数(時計・お知らせ・フッター)
+export const MainBody = ()=>{
+  return(
+  <SmainBody>
+    <SBodyParts>
+      <TimeCard />
+      <CardBody />
+    </SBodyParts>
+    <FooterMain />
+  </SmainBody>
+  )
+};
+
+
 /* ======================================================================== */  
 /* ============================ Components ================================ */  
 /* ======================================================================== */ 
 
 /* ====== Components ====== */
-//ホームページを呼び出す関数
+//ホーム用のページを呼び出す関数
 export const Home = () =>{
   return (
-
-    <Sdiv>
-
-    {/* ヘッダー */}
+    <ShomeWindow>
       <HeaderBody />
-
-
-    {/* ボディdiv */}
-      <Smain >
-      
-        <div style={{display:'flex'}}>
-      
-    {/* サイドバー */}
-      <SideBar />
-    
-    {/* メインコンテンツ */}
-          <SbodyDiv>
-            <TimeCard />
-            <CardBody />
-          </SbodyDiv>
-
-        </div>
-
-        <HooterBody />
-    </Smain>
-
-    </Sdiv>    
+      <Sdiv >
+          <SideBar />
+          <MainBody />          
+      </Sdiv>
+    </ShomeWindow>    
   );
 }
 

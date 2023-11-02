@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { ResponsiveHeader } from "./ResponsiveHeader1";
-import { Header2 } from "./Header2";
+import { ResponsiveHeader } from "./ResponsiveHeader";
+import { Header2 } from "./TitleHeader";
 
 const SheaderBody = styled.div`
     z-index:2;
