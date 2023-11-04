@@ -6,7 +6,7 @@ import styled from "styled-components";
 /* ======================================================================== */ 
 
 /* ====== Styled Components ====== */
-// Style Shooter Div
+// Style Sfooter Div
 const SfooterDiv = styled.div`
     display:flex;
     background-color:#333333;
@@ -19,7 +19,7 @@ const SfooterDiv = styled.div`
     justify-content: center;
 `;
 
-// Compornent HooterMain
+// Compornent FooterMain
 export const FooterMain = ()=>{
   return(
      <SfooterDiv>©2010 DONUTS Co.ltd.</SfooterDiv>

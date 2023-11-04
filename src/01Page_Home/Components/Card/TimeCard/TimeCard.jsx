@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { TimeCardHeader } from "./Parts/TimeCardHeader";
 import { TimeCardSelectBox } from "./Parts/TimeCardSelectBox";
-import { TimeCardButtonBox } from "./Parts/TimeCardButtonBox";
+import { TimeCardButtonBox,TextContext } from "./Parts/TimeCardButtonBox";
 import { TimeCardRadioButtonBox } from "./Parts/TimeCardRadioButtonBox";
 import { Timer } from "./Parts/Timer";
 import { TimeCardInputBox } from "./Parts/TimeCardInputBox";
@@ -61,7 +61,11 @@ const StimeCardBoxCrlDiv = styled.div`
 
 //Main TimeCard Compornent
 export const TimeCard = ()=>{
+
+  const [text, setText] = useState('');
+
     return(
+      <TextContext.Provider value={{text, setText}}>
       <StimecardDiv>
         <TimeCardHeader />
         <Timer />
@@ -78,6 +82,7 @@ export const TimeCard = ()=>{
       
       
       </StimecardDiv>
+      </TextContext.Provider>
     )
 };
 

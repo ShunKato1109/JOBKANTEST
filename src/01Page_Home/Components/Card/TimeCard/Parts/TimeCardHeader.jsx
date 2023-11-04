@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { TextContext } from "./TimeCardButtonBox";
 
 
 
@@ -16,9 +17,12 @@ export const StimecardHeader = styled.div`
 
 // 関数TimeCardHeader
 export const TimeCardHeader = ()=>{
+
+  const {text} = useContext(TextContext);
+
   return(
     <StimecardHeader>
-      <p>勤怠状況関数</p>
+      <p>{text}</p>
     </StimecardHeader>
   )
 };

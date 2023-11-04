@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
+/* ======================================================================== */  
+/* ============================ Styles ==================================== */  
+/* ======================================================================== */ 
 // Div Style
 export const Sdiv = styled.div`
     display:flex;
@@ -30,24 +33,48 @@ export const StimeCardButton = styled.button`
     cursor:pointer;
 `;
 
-// Compornent TimeCardButton
+/* ======================================================================== */  
+/* ========================= Helper Components ============================ */  
+/* ======================================================================== */ 
+// ボタンを呼び出す関数
 export const TimeCardButton =(props)=>{
     return(
-        <StimeCardButton style={{...props.style, backgroundColor:props.backcolor ,color:props.fontcolor}}>
+        <StimeCardButton onClick={props.onClick} style={{...props.style, backgroundColor:props.backcolor ,color:props.fontcolor}}>
             {props.label}
         </StimeCardButton>
     )
 };
 
+
+export const TextContext = React.createContext({
+    text: '',
+    setText: () => {}
+  });
+
+
+/* ======================================================================== */  
+/* ============================ Components ================================ */  
+/* ======================================================================== */ 
+//ボタンボックスを呼び出す関数(props=>テキスト・フォント色・背景色)
 export const TimeCardButtonBox =()=>{
+
+    const [text,setText] = useState('退勤中')
+
+    //ボタンを押した際にtextを更新する関数
+    const handleButtonClick = newText =>{
+        setText(newText)
+    };
+
     return(
+        <TextContext.Provider value={{text,setText}}>
         <Sdiv>
         <StimeCardButtonBoxDiv>
-            <TimeCardButton label="出 勤" backcolor="#EB840B" fontcolor="white"/>
-            <TimeCardButton label="休憩開始" backcolor="#ADADAD" fontcolor="white"/>
-            <TimeCardButton label="休憩終了" backcolor="#ADADAD" fontcolor="white"/>
-            <TimeCardButton label="退 勤" backcolor="#30B2D6" fontcolor="white" style={{marginRight:0}}/>
+            <TimeCardButton onClick={()=>handleButtonClick('出勤中')} label="出 勤" backcolor="#EB840B" fontcolor="white"/>
+            <TimeCardButton onClick={()=>handleButtonClick('休憩中')} label="休憩開始" backcolor="#ADADAD" fontcolor="white"/>
+            <TimeCardButton onClick={()=>handleButtonClick('出勤中')} label="休憩終了" backcolor="#ADADAD" fontcolor="white"/>
+            <TimeCardButton onClick={()=>handleButtonClick('退勤中')} label="退 勤" backcolor="#30B2D6" fontcolor="white" style={{marginRight:0}}/>
         </StimeCardButtonBoxDiv>
         </Sdiv>
+        </TextContext.Provider>
     )
 };

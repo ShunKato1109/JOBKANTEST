@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { WorkRecordHeader } from "./02Header";
 import { WRCardBody } from "./02CardBody";
+import { FooterMain } from "../../../Components/Footer/FooterMain";
 
 /* ======================================================================== */  
 /* ============================ Styles ==================================== */  
@@ -9,7 +10,6 @@ import { WRCardBody } from "./02CardBody";
 
 /* ====== Styled Components ====== */
 const SworkRecordMain = styled.div` //WorkRecordMainスタイル
-    width:100%;
     padding:13px 15px 13px 15px;
     background-color:#F7F7F7;
 `;
@@ -17,17 +17,23 @@ const SworkRecordMain = styled.div` //WorkRecordMainスタイル
 const SworkRecordSub = styled.div` //WorkRecordMainスタイル
     max-width:1110px;
     padding:0px 15px 0px 15px;
-    margin:0px;
 `;
+
+/* ======================================================================== */  
+/* ============================ Components ================================ */  
+/* ======================================================================== */ 
 
 /* ====== Components ====== */
 export const WorkRecordMain = ()=>{
     return(
+        <div style={{display:'flex',flexDirection:'column',width:'100%'}}>
         <SworkRecordMain>
             <SworkRecordSub>
                 <WorkRecordHeader />
                 <WRCardBody />
             </SworkRecordSub>
         </SworkRecordMain>
+        <FooterMain />
+        </div>
     )
 };

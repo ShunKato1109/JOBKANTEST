@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Clock } from "./Clock";
 
   // TimerDiv Style
   export const StimerDiv = styled.div`
@@ -9,6 +10,10 @@ import styled from "styled-components";
 
 // Timer Compornent
 export const Timer = ()=>{
-    return <StimerDiv>00:00:00</StimerDiv>
+    return (
+    <StimerDiv>
+      <Clock />
+    </StimerDiv>
+    )
   };
   

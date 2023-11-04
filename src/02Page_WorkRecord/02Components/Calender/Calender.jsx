@@ -10,29 +10,38 @@ import styled from "styled-components";
 const Sdiv = styled.div`
     margin:0px 13px 0px 13px;
     border-radius:5px; //機能してない
-    font-size:13px;
-    font-weight:500;
 `;
 
 const Stable = styled.table` // テーブル全体のスタイル
-border-collapse: collapse;
-
-width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    text-align:center;
 `;
 
 const Sth = styled.th` //テーブルヘッダーセルのスタイル
-    padding:3.25px 9.75px 3.25px 9.75px;
-    border: 1px solid #ADADAD;
-    
-    font-size:13px;
     background-color:#E6E6E6;
-`;
-
-const Std = styled.td` //テーブルセルのスタイル
-    padding:3.25px 9.75px 3.25px 9.75px;
+    padding:11px 4.5px 11px 4.5px;
     border: 1px solid #ADADAD;
-
+    font-size:13px;
+    font-weight:600;
 `;
+
+const Std = styled.td` //テーブルカレンダーセルのスタイル
+    padding:11px 4.5px 11px 3.25px;
+    border: 1px solid #ADADAD;  
+    font-size:15px;
+    font-weight:500;
+    text-decoration:underline;
+`;
+
+const Ssumtd = styled.td` //テーブル合計行のスタイル
+    background-color:#E6E6E6;
+    padding:11px 4.5px 11px 4.5px;
+    border: 1px solid #ADADAD;
+    font-size:13px;
+    font-weight:550;
+`;
+
 
 /* ====== Arry ====== */
 //テーブルヘッダーの配列
@@ -49,10 +58,21 @@ const tableHead =[
     "勤怠状況",
 ];
 
+//カレンダーの合計行の配列
+const tableSum = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+];
+
 /* ======================================================================== */  
 /* ============================ Components ================================ */  
 /* ======================================================================== */ 
-
 
 /* ====== Helper Components ====== */
 //日付の表示形式を制御する関数
@@ -90,6 +110,22 @@ const generateTableBodyForRow = (date) => {
     ];
 };
 
+//カレンダーの合計行を呼び出す関数
+const SumRow = ()=>{
+
+    //カレンダーの合計行の出勤時刻以降の列を呼び出す関数
+    const CalenderSum =(props)=>{
+    return <Ssumtd>{props.tablesumlabel}</Ssumtd>
+    };
+
+    return(
+        <>
+        <Ssumtd colSpan="2">合計</Ssumtd>
+        {tableSum.map(label=><CalenderSum tablesumlabel={label}/>)}
+        </>
+    )
+};
+
 //カレンダーのヘッダーセルを呼び出す関数(=>配列tableHead)
 const CalenderHead = (props)=>{
     return <Sth>{props.headlabel}</Sth>
@@ -99,7 +135,6 @@ const CalenderHead = (props)=>{
 const CalenderBody = (props)=>{
     return <Std>{props.tablelabel}</Std>
 };
-
 
 
 /* ====== Components ====== */
@@ -123,6 +158,9 @@ export const Calender = ()=>{
             {generateTableBodyForRow(date).map(label=><CalenderBody tablelabel={label}/>)}
           </tr>
         ))}
+            <tr>
+                <SumRow />
+            </tr>
             </tbody>
         </Stable>
         </Sdiv>

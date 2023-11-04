@@ -9,10 +9,12 @@ import { WorkRecordMain } from "./02Main";
 
 /* ====== Styled Components ====== */
 const SworkRecordBody = styled.div`
-    background-color:#F7F7F7;
     display:flex;
-    width:100%;
 `;
+
+/* ======================================================================== */  
+/* ============================ Components ================================ */  
+/* ======================================================================== */ 
 
 /* ====== Components ====== */
 export const WorkRecordBody = ()=>{
