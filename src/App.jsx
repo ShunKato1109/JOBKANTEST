@@ -6,7 +6,7 @@ import { TimeCard } from "./01Page_Home/Components/Card/TimeCard/TimeCard";
 import { CardBody } from "./01Page_Home/Components/Card/CardBody";
 import { HeaderBody } from "./Components/Header/HeaderBody";
 import WorkRecordPage from "./02Page_WorkRecord/Page_WorkRecord";
-import { FooterMain } from "./Components/Hooter/FooterMain";
+import { FooterMain } from "./Components/Footer/FooterMain";
 
 const App = ()=>{
   return(

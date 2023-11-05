@@ -58,12 +58,13 @@ export const TextContext = React.createContext({
 //ボタンボックスを呼び出す関数(props=>テキスト・フォント色・背景色)
 export const TimeCardButtonBox =()=>{
 
-    const [text,setText] = useState('退勤中')
+    const [text,setText] = useState()
 
     //ボタンを押した際にtextを更新する関数
     const handleButtonClick = newText =>{
         setText(newText)
     };
+    
 
     return(
         <TextContext.Provider value={{text,setText}}>
@@ -78,3 +79,6 @@ export const TimeCardButtonBox =()=>{
         </TextContext.Provider>
     )
 };
+
+
+  

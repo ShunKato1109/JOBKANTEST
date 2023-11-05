@@ -4,16 +4,16 @@ import { TimeCardHeader } from "./Parts/TimeCardHeader";
 import { TimeCardSelectBox } from "./Parts/TimeCardSelectBox";
 import { TimeCardButtonBox,TextContext } from "./Parts/TimeCardButtonBox";
 import { TimeCardRadioButtonBox } from "./Parts/TimeCardRadioButtonBox";
-import { Timer } from "./Parts/Timer";
+import { Timer } from "./Parts/Clock";
 import { TimeCardInputBox } from "./Parts/TimeCardInputBox";
 
 /* ======================================================================== */  
 /* ============================ Styles ==================================== */  
 /* ======================================================================== */ 
-
 /* ====== Styled Components ====== */
-// TimeCardDiv Style
-export const StimecardDiv = styled.div`
+export const StimecardDiv = styled.div` // タイムカード全体を囲うスタイル
+  display:flex;
+  flex-direction:column;
   max-width:100%;
   background-color:white;
   border-radius:5px;
@@ -23,30 +23,10 @@ export const StimecardDiv = styled.div`
   margin-right:13px;
   margin-left:13px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  align-items:center;
 `;
 
-// Div Style
-export const Sdiv = styled.div`
-  display:flex;
-  justify-content:center;
-`;
-
-// P Style
-export const StimeCardP = styled.p`
-  font-size:13px;
-  margin-right:auto;
-  margin-bottom:6.5px;
-`;
-
-// Style TimeCardBox Div
-const StimeCardBoxDiv = styled.div`
-  width:100%;
-  display:flex;
-  justify-content: center; 
-`;
-
-// Style TimeCardBoxCrl Div
-const StimeCardBoxCrlDiv = styled.div`
+const StimeCardBody = styled.div` //タイムカードのボディを囲うスタイル
   display:flex;
   width:58%;
   padding-right:15px;
@@ -58,28 +38,25 @@ const StimeCardBoxCrlDiv = styled.div`
 /* ======================================================================== */  
 /* ============================ Components ================================ */  
 /* ======================================================================== */ 
-
-//Main TimeCard Compornent
+//タイムカードを呼び出す関数
 export const TimeCard = ()=>{
 
-  const [text, setText] = useState('');
+  const [text, setText] = useState('退勤中');
 
     return(
       <TextContext.Provider value={{text, setText}}>
       <StimecardDiv>
-        <TimeCardHeader />
-        <Timer />
 
-      <StimeCardBoxDiv>
-      <StimeCardBoxCrlDiv>
-        <Sdiv><StimeCardP>打刻場所を選択してください</StimeCardP></Sdiv>
-        <TimeCardSelectBox />
-        <TimeCardInputBox />
-        <TimeCardButtonBox />
-        <TimeCardRadioButtonBox />
-      </StimeCardBoxCrlDiv>
-      </StimeCardBoxDiv>
-      
+        <TimeCardHeader />
+        
+        <StimeCardBody>
+          <Timer />
+          <p style={{fontSize:'13px',marginRight:'auto',marginBottom:'6.5px'}}>打刻場所を選択してください</p>
+          <TimeCardSelectBox />
+          <TimeCardInputBox />
+          <TimeCardButtonBox />
+          <TimeCardRadioButtonBox />
+        </StimeCardBody>
       
       </StimecardDiv>
       </TextContext.Provider>
