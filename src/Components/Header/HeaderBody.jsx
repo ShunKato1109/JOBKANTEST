@@ -4,7 +4,7 @@ import { ResponsiveHeader } from "./ResponsiveHeader";
 import { Header2 } from "./TitleHeader";
 
 const SheaderBody = styled.div`
-    z-index:2;
+    // z-index:2;
 `;
 
 export const HeaderBody = ()=>{

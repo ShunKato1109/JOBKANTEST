@@ -7,8 +7,8 @@ import { BrowserRouter as Router,Link } from 'react-router-dom';
 /* ======================================================================== */ 
 
 const SnaviLinkContainer = styled.div`
-padding: 50px;
-margin: -50px; 
+// padding: 50px;
+// margin: -50px; 
 `;
 
   const SnaviButton = styled.button` //ボタンのスタイル  
@@ -18,11 +18,26 @@ margin: -50px;
     cursor:pointer;
     pointer-events:auto;
     height:100%;
+    border:none;
     border-right:0.5px solid gray;
     font-size:10px;
     color:#FFFFFF;
-    border:none;
+    
   `;
+
+//   const SheadButton = styled.button` //ジョブカン以外のボタンのスタイル
+//     height:100%;
+//     padding:0px 25px 0px 25px;
+//     background-color:transparent;
+//     border-right:0.5px solid gray;
+//     cursor:pointer;
+//     font-size:10px;
+//     color:#c0c0c0;
+//     &:hover{
+//       color:white;
+//       background-color:black;
+//     }
+// `;
 
 /* ======================================================================== */  
 /* ============================ Components ================================ */  
