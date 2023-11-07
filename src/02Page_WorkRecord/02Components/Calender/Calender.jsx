@@ -32,6 +32,7 @@ const Std = styled.td` //テーブルカレンダーセルのスタイル
     font-size:15px;
     font-weight:500;
     text-decoration:underline;
+    color:${props => props.isWeekend ? 'red' : 'inherit'};
 `;
 
 const Ssumtd = styled.td` //テーブル合計行のスタイル
@@ -97,7 +98,7 @@ const generateDates = (start,end)=>{
 // 指定された日付に対するテーブル行のボディデータを生成する関数
 const generateTableBodyForRow = (date) => {
     return [
-        formatDate(date),
+        {label:formatDate(date),date:date},
         "",
         "",
         "",
@@ -133,7 +134,14 @@ const CalenderHead = (props)=>{
 
 //カレンダーのボディセルを呼び出す関数(=>)
 const CalenderBody = (props)=>{
-    return <Std>{props.tablelabel}</Std>
+
+    if (!props.date) {
+        return <Std>{props.tablelabel}</Std>;
+      }
+      
+    const isWeekend = props.date.getDay()===0 || props.date.getDay()===6;
+
+    return <Std isWeekend={isWeekend}>{props.tablelabel}</Std>
 };
 
 
@@ -153,9 +161,9 @@ export const Calender = ()=>{
              </tr>
             </thead>
             <tbody>
-            {dates.map(date => (
+            {dates.map((date,index) => (
           <tr key={date.toISOString()}>
-            {generateTableBodyForRow(date).map(label=><CalenderBody tablelabel={label}/>)}
+            {generateTableBodyForRow(date).map((data,label)=><CalenderBody date={data.date} tablelabel={data.label}/>)}
           </tr>
         ))}
             <tr>
