@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { SideBar } from "../Components/SideBar/SideBar";
-import { TimeCard } from "./Components/Card/TimeCard/TimeCard";
-import { CardBody } from "./Components/Card/CardBody";
 import { HeaderBody } from "../Components/Header/HeaderBody";
+import { SideBar } from "../Components/SideBar/SideBar";
+import { TimeCard } from "./TimeCard";
+import { CardBody } from "./CardBody";
 import { FooterMain } from "../Components/Footer/FooterMain";
 
 /* ======================================================================== */  
