@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 /* ======================================================================== */  
 /* ============================ Styles ==================================== */  
 /* ======================================================================== */ 
@@ -31,8 +30,10 @@ const Std = styled.td` //テーブルカレンダーセルのスタイル
     border: 1px solid #ADADAD;  
     font-size:15px;
     font-weight:500;
-    text-decoration:underline;
-    color:${props => props.isWeekend ? 'red' : 'inherit'};
+    text-decoration:${props=>props.underline}
+    // text-decoration:underline;
+    // color:${props => props.color || 'inherit'};
+    
 `;
 
 const Ssumtd = styled.td` //テーブル合計行のスタイル
@@ -41,6 +42,10 @@ const Ssumtd = styled.td` //テーブル合計行のスタイル
     border: 1px solid #ADADAD;
     font-size:13px;
     font-weight:550;
+`;
+
+const Sweekday = styled.span`
+    color:${props =>props.color};
 `;
 
 
@@ -76,11 +81,23 @@ const tableSum = [
 /* ======================================================================== */ 
 
 /* ====== Helper Components ====== */
+//公休日の記述
+const WeekEnd = ({weekText})=>{
+    return (
+        <>{weekText}</>
+    )
+};
+
+
 //日付の表示形式を制御する関数
-const formatDate = (date) => {
+const formatDate = (date,color) => {
     const monthDay = date.toLocaleDateString('ja-JP', { month: '2-digit', day: '2-digit' });
     const weekday = date.toLocaleDateString('ja-JP', { weekday: 'short' });
-    return `${monthDay}(${weekday})`;
+    return (
+        <>
+        {`${monthDay}(`}<Sweekday color={color}>{weekday}</Sweekday>{`)`}
+        </>
+    );
   };
 
 // 指定された日付の範囲内で日付の配列を生成する関数
@@ -97,9 +114,16 @@ const generateDates = (start,end)=>{
 
 // 指定された日付に対するテーブル行のボディデータを生成する関数
 const generateTableBodyForRow = (date) => {
+       //土日の場合、フォントの色を変更する
+       const dayOfWeek = date.getDay();
+       let weekText = null;
+       if(dayOfWeek === 0 || dayOfWeek=== 6){
+        weekText = <WeekEnd weekText ="公休" />
+       }
+
     return [
         {label:formatDate(date),date:date},
-        "",
+        {label:weekText || ""},
         "",
         "",
         "",
@@ -137,11 +161,25 @@ const CalenderBody = (props)=>{
 
     if (!props.date) {
         return <Std>{props.tablelabel}</Std>;
+        // return <Std>{React.isValidElement(props.tablelabel) ? props.tablelabel : props.tablelabel}</Std>;
       }
-      
-    const isWeekend = props.date.getDay()===0 || props.date.getDay()===6;
+    
+    //土日の場合、フォントの色を変更する
+    const dayOfWeek = props.date.getDay();
+    let color = 'inherit';
+    let weekText = ""
+    if(dayOfWeek===0){
+        color = 'red';
+    }else if(dayOfWeek===6){
+        color='blue';
+    }
 
-    return <Std isWeekend={isWeekend}>{props.tablelabel}</Std>
+    // formatDate 関数を使って曜日に色を適用
+    const dateLabel = formatDate(props.date, color,weekText);
+
+    return <Std underline={'underline'}>{dateLabel}</Std>
+
+    // return <Std color={color}>{props.tablelabel}</Std>
 };
 
 

@@ -42,6 +42,7 @@ const StimecardHeader = styled.div` //タイムカードのヘッダー関数を
   border-radius:5px 5px 0px 0px;
   margin-right:13px;
   margin-left:13px;
+  
 `;
 
 const StimerDiv = styled.div` //時計関数を囲うスタイル
@@ -116,10 +117,10 @@ const options = [
 /* ============================ Components ================================ */  
 /* ======================================================================== */ 
 /* ====== タイムカードのヘッダー ====== */
-export const TimeCardHeader = ()=>{
+export const TimeCardHeader = ({text})=>{
   return(
     <StimecardHeader>
-      <p>出勤中</p>
+      <p style={{marginLeft:'16.25px'}}>{text}</p>
     </StimecardHeader>
   )
 };
@@ -201,20 +202,14 @@ export const TimeCardButton =(props)=>{
 };
 
 /* ====== ボタンボックス ====== */
-export const ButtonBox =()=>{
+export const ButtonBox =({setText})=>{
 
-  const [text,setText] = useState()
-  //ボタンを押した際にtextを更新する関数
-  const handleButtonClick = newText =>{
-      setText(newText)
-  };
-  
   return(
       <SButtonBoxDiv>
-          <TimeCardButton onClick={()=>handleButtonClick('出勤中')} label="出 勤" backcolor="#EB840B" fontcolor="white"/>
-          <TimeCardButton onClick={()=>handleButtonClick('休憩中')} label="休憩開始" backcolor="#ADADAD" fontcolor="white"/>
-          <TimeCardButton onClick={()=>handleButtonClick('出勤中')} label="休憩終了" backcolor="#ADADAD" fontcolor="white"/>
-          <TimeCardButton onClick={()=>handleButtonClick('退勤中')} label="退 勤" backcolor="#30B2D6" fontcolor="white" style={{marginRight:0}}/>
+          <TimeCardButton onClick={()=>setText('出勤中')} label="出 勤" backcolor="#EB840B" fontcolor="white"/>
+          <TimeCardButton onClick={()=>setText('休憩中')} label="休憩開始" backcolor="#ADADAD" fontcolor="white"/>
+          <TimeCardButton onClick={()=>setText('出勤中')} label="休憩終了" backcolor="#ADADAD" fontcolor="white"/>
+          <TimeCardButton onClick={()=>setText('退勤中')} label="退 勤" backcolor="#30B2D6" fontcolor="white" style={{marginRight:0}}/>
       </SButtonBoxDiv>
   )
 };
@@ -240,48 +235,22 @@ export const TimeCard = ()=>{
   const [text, setText] = useState('退勤中');
 
     return(
-      // <TextContext.Provider value={{text, setText}}>
       <StimecardDiv>
 
-        <TimeCardHeader />
+        <TimeCardHeader text={text}/>
         
         <StimeCardBody>
           <Clock />
           <p style={{fontSize:'13px',marginRight:'auto',marginBottom:'6.5px'}}>打刻場所を選択してください</p>
           <TimeCardSelectBox />
           <TimeCardInputBox />
-          <ButtonBox />
+          <ButtonBox setText={setText}/>
           <TimeCardRadioButtonBox />
         </StimeCardBody>
       
       </StimecardDiv>
-      // </TextContext.Provider>
     )
 };
-
-
-
-/* ======================================================================== */  
-/* ============================ Styles ==================================== */  
-/* ======================================================================== */ 
-
-
-/* ======================================================================== */  
-/* ========================= Helper Components ============================ */  
-/* ======================================================================== */ 
-
-/* ======================================================================== */  
-/* ============================ Styles ==================================== */  
-/* ======================================================================== */ 
-
-
-
-
-/* ======================================================================== */  
-/* ============================ Components ================================ */  
-/* ======================================================================== */ 
-
-
 
 
 
