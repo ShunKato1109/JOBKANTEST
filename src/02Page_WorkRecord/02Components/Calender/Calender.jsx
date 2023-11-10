@@ -44,7 +44,7 @@ const Ssumtd = styled.td` //テーブル合計行のスタイル
     font-weight:550;
 `;
 
-const Sweekday = styled.span`
+const Sweekday = styled.span` //曜日へテキストカラーを引き渡すためのスタイル
     color:${props =>props.color};
 `;
 
@@ -178,8 +178,6 @@ const CalenderBody = (props)=>{
     const dateLabel = formatDate(props.date, color,weekText);
 
     return <Std underline={'underline'}>{dateLabel}</Std>
-
-    // return <Std color={color}>{props.tablelabel}</Std>
 };
 
 
